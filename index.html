@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>خطة · Khotta</title>
+<meta name="description" content="Exam countdown and automatic study plan generator. عدّاد الامتحانات ومولّد خطة مذاكرة تلقائي.">
+<meta name="theme-color" content="#1b2a4a">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img src="logo.svg" alt="" width="36" height="36"><div><b data-i="app">خطة</b><small data-i="tag"></small></div></div>
+  <button class="lang" id="langBtn" type="button" aria-label="Language">EN</button>
+</header>
+
+<main>
+  <section id="v-exams" class="view" aria-labelledby="h-exams">
+    <h2 id="h-exams" class="sr" data-i="tabExams"></h2>
+    <div id="hero" class="hero"></div>
+    <div id="examList" class="list"></div>
+    <button class="fab" id="addBtn" type="button"><span aria-hidden="true">+</span> <span data-i="addExam"></span></button>
+  </section>
+
+  <section id="v-plan" class="view" hidden aria-labelledby="h-plan">
+    <h2 id="h-plan" class="sr" data-i="tabPlan"></h2>
+    <div id="planSummary"></div>
+    <div class="actions">
+      <button class="btn" id="regenBtn" type="button" data-i="regen"></button>
+      <button class="btn ghost" id="icsBtn" type="button" data-i="exportIcs"></button>
+      <button class="btn ghost" id="printBtn" type="button" data-i="print"></button>
+    </div>
+    <div id="planDays"></div>
+  </section>
+
+  <section id="v-settings" class="view" hidden aria-labelledby="h-set">
+    <h2 id="h-set" class="sr" data-i="tabSettings"></h2>
+    <div class="card">
+      <h3 data-i="studyDays"></h3>
+      <div id="dayChips" class="chips"></div>
+      <label class="field"><span><span data-i="hoursPerDay"></span>: <b id="hpdOut"></b></span>
+        <input type="range" id="hpd" min="0.5" max="10" step="0.5"></label>
+      <label class="field"><span><span data-i="startHour"></span>: <b id="shOut"></b></span>
+        <input type="range" id="sh" min="5" max="22" step="1"></label>
+      <p class="hint" data-i="settingsHint"></p>
+    </div>
+    <div class="card">
+      <h3 data-i="data"></h3>
+      <div class="actions">
+        <button class="btn ghost" id="sampleBtn" type="button" data-i="sample"></button>
+        <button class="btn ghost" id="expBtn" type="button" data-i="backup"></button>
+        <button class="btn ghost" id="impBtn" type="button" data-i="restore"></button>
+        <button class="btn danger" id="resetBtn" type="button" data-i="reset"></button>
+      </div>
+      <input type="file" id="impFile" accept="application/json,.json" hidden>
+      <p class="hint" data-i="honest"></p>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs" aria-label="Main">
+  <button type="button" data-tab="exams" class="on"><i>⏳</i><span data-i="tabExams"></span></button>
+  <button type="button" data-tab="plan"><i>🗓</i><span data-i="tabPlan"></span></button>
+  <button type="button" data-tab="settings"><i>⚙</i><span data-i="tabSettings"></span></button>
+</nav>
+
+<div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <form id="examForm" class="sheet" novalidate>
+    <h3 id="mTitle"></h3>
+    <label class="field"><span data-i="subject"></span><input id="fName" maxlength="40" required autocomplete="off"></label>
+    <div class="row2">
+      <label class="field"><span data-i="date"></span><input id="fDate" type="date" required></label>
+      <label class="field"><span data-i="time"></span><input id="fTime" type="time" value="09:00"></label>
+    </div>
+    <fieldset class="field"><legend data-i="difficulty"></legend>
+      <div class="seg" id="fDiff">
+        <label><input type="radio" name="diff" value="1"><span data-i="easy"></span></label>
+        <label><input type="radio" name="diff" value="2" checked><span data-i="medium"></span></label>
+        <label><input type="radio" name="diff" value="3"><span data-i="hard"></span></label>
+      </div></fieldset>
+    <label class="field"><span data-i="hoursNeeded"></span><input id="fHours" type="number" min="1" max="200" step="0.5" inputmode="decimal"></label>
+    <p class="err" id="fErr" role="alert"></p>
+    <div class="actions">
+      <button class="btn" type="submit" data-i="save"></button>
+      <button class="btn ghost" id="cancelBtn" type="button" data-i="cancel"></button>
+    </div>
+  </form>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="plan.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Khotta">
+<rect width="128" height="128" rx="28" fill="#1b2a4a"/>
+<rect x="22" y="26" width="84" height="80" rx="10" fill="#f6f0e1"/>
+<rect x="22" y="26" width="84" height="20" rx="10" fill="#e2493b"/>
+<rect x="22" y="38" width="84" height="8" fill="#e2493b"/>
+<rect x="38" y="16" width="8" height="18" rx="4" fill="#ffd84d" stroke="#1b2a4a" stroke-width="3"/>
+<rect x="82" y="16" width="8" height="18" rx="4" fill="#ffd84d" stroke="#1b2a4a" stroke-width="3"/>
+<path d="M40 76l13 13 36-36" fill="none" stroke="#1b2a4a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M38 100h52" stroke="#ffd84d" stroke-width="5" stroke-linecap="round" opacity=".0"/>
+</svg>

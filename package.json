@@ -1,0 +1,20 @@
+{
+ "name": "khotta",
+ "version": "1.0.0",
+ "description": "Exam countdown and automatic study plan generator",
+ "main": "index.js",
+ "directories": {
+  "doc": "docs",
+  "test": "tests"
+ },
+ "scripts": {
+  "test": "node tests/plan.test.js",
+  "e2e": "node tests/e2e.js"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "MIT",
+ "dependencies": {
+  "puppeteer-core": "^25.19.0"
+ }
+}
