@@ -15,6 +15,15 @@ Khotta is a small static web app for students. It shows a live countdown to each
 <img src="docs/5-ar.png" width="240" alt="Arabic RTL screen">
 </p>
 
+## Screenshots
+
+Captured from the live site (https://yousefkhames.github.io/khotta/).
+
+<p>
+  <img src="docs/screenshots/live-desktop.png" alt="khotta desktop view" width="640">
+  <img src="docs/screenshots/live-mobile.png" alt="khotta mobile view" width="200">
+</p>
+
 ## Features
 
 - Live countdown (days, hours, minutes, seconds) to the next exam, plus a countdown chip on every exam.
